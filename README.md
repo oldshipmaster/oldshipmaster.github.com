@@ -1,3 +1,1 @@
-我的博客，基于 [3-Jekyll Theme](https://github.com/P233/3-Jekyll)，大部分是从 Evernote 上同步过来的笔记。
-
-请访问 [novoland.github.io](http://novoland.github.io)。
+在网上看到别人的博客，很喜欢这个样式，然后就clone过来了，不是偷别人东西，等我有时间我就换成自己的内容。
