@@ -1,42 +1,139 @@
-# 3-Jekyll Theme
+hexo-theme-yilia
+================
 
-新版 3-Jekyll，当前完成度 80%，预览请访问 [http://peiwen.lu](http://peiwen.lu)，[Github repo](https://github.com/P233/P233.github.io)。
+Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题。
+崇尚简约优雅，以及极致的性能。 你可以点击 [我的博客](http://litten.github.io/) 查看效果。           
+ 
+如遇到问题或有需求，可以：
+* 提issue给我
+* 在这篇文章下留言[Hexo主题Yilia](http://litten.github.io/2014/08/31/hexo-theme-yilia/)
+* 移动端问题留言[Yilia在移动端适配的一些事](http://litten.github.io/2015/02/23/yilia-on-mobile/)
 
-旧版请在 [https://github.com/P233/3-Jekyll/releases](https://github.com/P233/3-Jekyll/releases) 下载。
+我都会看到并处理。
 
+如果你想体验手机浏览效果，可以扫一下二维码：
 
-## 针对旧版的改进
+![litten-qrcode](https://cloud.githubusercontent.com/assets/2024949/6349328/51a067fe-bc64-11e4-881c-f68050c50c28.png)
 
-* 侧边栏使用 Tag 或 Category 做为文章分类，默认 Tag。
-* 自动生成侧边栏分类标签，基本不需要修改模板文件。但标签顺序由 Jekyll 根据时间顺序生成，需要手动调整顺序只能修改 `_includes/sidebar.html`，格式是 `<li class="sidebar-tag" data-filter="TAG">TAG</li>`，替换 `TAG`，大小写敏感。
-* 更加全面的 Sass 变量，方便个性化主题样式。
-* 暂定取消文章的标题目录。
-* 取消了嵌入 Codepen。
+—————————————————————
 
+关于主题：
 
-## TODO
+1. 我喜欢简约。所以近期文章，搜索框都拿掉了    
+2. 接地气一点。所以用上了jiathis分享，友言评论，以及baidu的cdn       
+3. 追求移动端的体验
+3. 让大家把注意力放到内容上。这是本主题设计初衷      
+4. 主题不支持IE6，7，8。以后也不会        
 
-* 搜索功能
-* Webkit 换页动画
-* 改进文章筛选动画
-* <del>集成 Google Analytics</del>
-* 文章时间，Category，Tag 归档页面
-* Favicon
-* Mobile touch swipe
+##一、近期更新
 
-其他建议欢迎[提交 issue](https://github.com/P233/3-Jekyll/issues/new)
+2015.6.14 - 模块化加载
+2015.2.21 - 移动侧重构&布局bug修改
+2014.11.7 - 增加“友情链接”“关于我”               
+2014.10.22 - 优化fancybox展示               
+2014.10.16 - 增加表格样式                 
+2014.9.19 - 云标签挂件                 
 
+##二、使用
 
-## 使用
+#### 安装
 
-### 设置 `_config.yml`
+``` bash
+$ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
+```
 
-`_config.yml` 除基本的站点设置外，新加入了社交链接与评论设置。将需要添加的社交帐号填入对应设置，并取消注释，会在头像下方增加一条社交帐号的链接。支持 Twitter, Weibo, Github, Codepen 以及 Dribbble。此外，填入 Disqus 的 shortname 也会启用 Disqus 评论。 `filter` 选项选择使用 `tag` 或 `category` 作为文章分类。
+#### 配置
 
-### 修改样式
+修改hexo根目录下的 `_config.yml` ： `theme: yilia`
 
-样式相关的 Sass 变量都存储在 `/css/main.sass` 文件中，修改这个文件可以满足大部分样式定制的需求。建议首先修改 `$gradient-start` 与 `$gradient-end` 两个变量，给自己的博客使用独一无二的侧边栏背景。
+#### 更新
 
-### 替换图片
+``` bash
+cd themes/yilia
+git pull
+```
 
-请不要忘记替换 `/assets/img/` 内的图片。`avatar.jpg` 是侧边栏头像的图片，`qrcode.jpg` 会在提示浏览器不兼容时使用。[QR Code 生成器](https://www.unitag.io/qrcode)
+##三、外观
+
+####**宽屏**
+![宽屏](http://littendomo.sinaapp.com/yilia/yilia-pc1.png)        
+
+####**宽屏文字**
+![宽屏文字](http://littendomo.sinaapp.com/yilia/yilia-pc2.png)   
+
+####**窄屏**
+![窄屏](http://littendomo.sinaapp.com/yilia/yilia-pc3.png)     
+
+####**同步instagram**
+![同步instagram](http://littendomo.sinaapp.com/yilia/yilia-pc4.png)
+
+####**移动端**
+![移动端](http://littendomo.sinaapp.com/yilia/yilia-mobile.png)
+![移动端](http://littendomo.sinaapp.com/yilia/yilia-mobile2.png)   
+
+##四、配置
+
+主题配置文件在主目录下的`_config.yml`：
+
+```
+# Header
+menu:
+  主页: /
+  所有文章: /archives
+  # 随笔: /tags/随笔
+
+# SubNav
+subnav:
+  github: "#"
+  weibo: "#"
+  rss: "#"
+  zhihu: "#"
+  #douban: "#"
+  #mail: "#"
+  #facebook: "#"
+  #google: "#"
+  #twitter: "#"
+  #linkedin: "#"
+
+rss: /atom.xml
+
+# Content
+excerpt_link: more
+fancybox: true
+mathjax: true
+
+# Miscellaneous
+google_analytics: ''
+favicon: /favicon.png
+
+#你的头像url
+avatar: ""
+#是否开启分享
+share: true
+#是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
+#若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论
+duoshuo: true
+#是否开启云标签
+tagcloud: true
+
+#是否开启友情链接
+#不开启——
+#friends: false
+#开启——
+friends:
+  奥巴马的博客: http://localhost:4000/
+  卡卡的美丽传说: http://localhost:4000/
+  本泽马的博客: http://localhost:4000/
+  吉格斯的博客: http://localhost:4000/
+  习大大大不同: http://localhost:4000/
+  托蒂的博客: http://localhost:4000/
+
+#是否开启“关于我”。
+#不开启——
+#aboutme: false
+#开启——
+aboutme: 我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…
+```
+##五、其他
+
+[同步你的instagram图片](https://github.com/litten/hexo-theme-yilia/wiki/%E5%90%8C%E6%AD%A5%E4%BD%A0%E7%9A%84instagram%E5%9B%BE%E7%89%87)
